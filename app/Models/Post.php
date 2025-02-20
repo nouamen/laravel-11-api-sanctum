@@ -15,5 +15,12 @@ class Post extends Model
     function user(){
         return $this->belongsTo(User::class,"user_id");
     }
+    function comment(){
+        return $this->hasMany(Comment::class);
+    }
+    function like(){
+        return $this->hasMany(Like::class);
+    }
+    
 }
 

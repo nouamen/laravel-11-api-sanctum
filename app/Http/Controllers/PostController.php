@@ -86,7 +86,7 @@ class PostController extends Controller
     }
     public function getPost($post_id){
         try{
-            $post = Post::with("user")->find($post_id);
+            $post = Post::with("user","comment","like")->find($post_id);
             return response()->json([
                 "success" => true,
                 "posts" => $post
