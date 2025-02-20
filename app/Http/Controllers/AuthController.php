@@ -30,8 +30,8 @@ class AuthController extends Controller
                 "errors" => $validated->errors()
             ],400);
         }
+        $validatedData = $validated->validated();
         try{
-            $validatedData = $validated->validated();
             $user = User::create([
                 "name" => $validatedData["name"],
                 "email" => $validatedData["email"],
